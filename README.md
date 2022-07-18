@@ -10,7 +10,7 @@ https://golosgit.github.io/currency-converter-react/
 
 ## General info
 
-Simple to do list that help with managing tasks (add, delete, toggle done/undone). 
+Simple currency converter. There are 4 currencies to choose from.np 
 
 ## Technologies
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
