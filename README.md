@@ -10,7 +10,7 @@ https://golosgit.github.io/currency-converter-react/
 
 ## General info
 
-Simple currency converter. There are 4 currencies to choose from.np 
+Simple currency converter. At the moment there are 4 currencies to choose from.
 
 ## Technologies
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
