@@ -1,36 +1,30 @@
 import { useState } from "react";
 import "./style.css";
+import currencies from "./currencies";
 
-const Form = ({ currencies, calculateResult, exchangeRate, result }) => {
+const Form = () => {
   const [exchangeAmount, setExchangeAmount] = useState(0);
   const [exchangeCurrency, setExchangeCurrency] = useState("PLN");
   const [resultCurrency, setResultCurrency] = useState("EUR");
 
-  const onInputChange = ({ target }) => {
-    setExchangeAmount(target.value);
-    console.log(exchangeAmount, exchangeCurrency, resultCurrency);
-    calculateResult(exchangeAmount, exchangeCurrency, resultCurrency);
-  };
+  const exchangeRate =
+    currencies.find(({ shortName }) => shortName === exchangeCurrency).rate /
+    currencies.find(({ shortName }) => shortName === resultCurrency).rate;
 
-  const onExchangeCurrencyChange = ({ target }) => {
-    setExchangeCurrency(target.value);
-    console.log(exchangeAmount, exchangeCurrency, resultCurrency);
-    calculateResult(exchangeAmount, exchangeCurrency, resultCurrency);
-  };
+  const result = (
+    exchangeAmount * 
+    currencies.find(({ shortName }) => shortName === exchangeCurrency).rate /
+    currencies.find(({ shortName }) => shortName === resultCurrency).rate
+  );
 
-  const onResultCurrencyChange = ({ target }) => {
-    setResultCurrency(target.value);
-    console.log(exchangeAmount, exchangeCurrency, resultCurrency);
-    calculateResult(exchangeAmount, exchangeCurrency, resultCurrency);
-  };
+  const onInputChange = ({ target }) => setExchangeAmount(target.value);
+
+  const onExchangeCurrencyChange = ({ target }) => setExchangeCurrency(target.value);
+
+  const onResultCurrencyChange = ({ target }) => setResultCurrency(target.value);
 
   return (
     <form className="form">
-    <p>exchange amount {exchangeAmount}</p>
-    <p>exchange currency {exchangeCurrency}</p>
-    <p>result currency {resultCurrency}</p>
-    <p>rate {exchangeRate}</p>
-    <p>result {result}</p>
       <fieldset className="form__fieldset">
         <legend className="form__legend">
           Kalkulator walut <span className="form__legendSmall">(kursy z dnia 13.06.2022)</span>
@@ -46,11 +40,16 @@ const Form = ({ currencies, calculateResult, exchangeRate, result }) => {
             type="number"
             min="0"
             step="1"
+            id="exchange"
           />
-          <select value={exchangeCurrency} onChange={onExchangeCurrencyChange} className="form__select">
-            {currencies.map((currency) => (
-              <option value={currency.shortName} key={currency.shortName}>
-                {currency.shortName} ({currency.name})
+          <select 
+            value={exchangeCurrency} 
+            onChange={onExchangeCurrencyChange} 
+            className="form__select"
+          >
+            {currencies.map(({ shortName, name }) => (
+              <option value={shortName} key={shortName}>
+                {shortName} ({name})
               </option>
             ))}
           </select>
@@ -59,17 +58,27 @@ const Form = ({ currencies, calculateResult, exchangeRate, result }) => {
           <label className="form__label form--alignRight" for="receive">
             Otrzymasz:
           </label>
-          <input className="form__input form--alignRight form__input--readonly" type="number" value={result} readOnly />
-          <select value={resultCurrency} onChange={onResultCurrencyChange} className="form__select">
-            {currencies.map((currency) => (
-              <option value={currency.shortName} key={currency.shortName}>
-                {currency.shortName} ({currency.name})
+          <input
+            className="form__input form--alignRight form__input--readonly"
+            type="number"
+            value={result.toFixed(2)}
+            id="receive"
+            readOnly
+          />
+          <select 
+            value={resultCurrency} 
+            onChange={onResultCurrencyChange}
+            className="form__select"
+          >
+            {currencies.map(({ shortName, name }) => (
+              <option value={shortName} key={shortName}>
+                {shortName} ({name})
               </option>
             ))}
           </select>
         </p>
         <p className="form__exchangeInfo">
-          1 {exchangeCurrency} to {exchangeRate} {resultCurrency}
+          1 {exchangeCurrency} to {exchangeRate.toFixed(5)} {resultCurrency}
         </p>
       </fieldset>
     </form>
