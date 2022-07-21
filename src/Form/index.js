@@ -11,16 +11,10 @@ const Form = () => {
     currencies.find(({ shortName }) => shortName === exchangeCurrency).rate /
     currencies.find(({ shortName }) => shortName === resultCurrency).rate;
 
-  const result = (
-    exchangeAmount * 
-    currencies.find(({ shortName }) => shortName === exchangeCurrency).rate /
-    currencies.find(({ shortName }) => shortName === resultCurrency).rate
-  );
+  const result = exchangeAmount * exchangeRate;
 
   const onInputChange = ({ target }) => setExchangeAmount(target.value);
-
   const onExchangeCurrencyChange = ({ target }) => setExchangeCurrency(target.value);
-
   const onResultCurrencyChange = ({ target }) => setResultCurrency(target.value);
 
   return (
