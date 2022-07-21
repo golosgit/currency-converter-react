@@ -13,7 +13,13 @@ const Form = () => {
 
   const result = exchangeAmount * exchangeRate;
 
-  const onInputChange = ({ target }) => setExchangeAmount(target.value);
+  const onInputChange = ({ target }) => { 
+    if (Math.sign(target.value) < 0) {
+      setExchangeAmount(target.value.slice(1));
+    } else {
+      setExchangeAmount(target.value);
+    }
+  };
   const onExchangeCurrencyChange = ({ target }) => setExchangeCurrency(target.value);
   const onResultCurrencyChange = ({ target }) => setResultCurrency(target.value);
 
