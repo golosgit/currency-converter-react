@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./style.css";
 import currencies from "./currencies";
 
-const Form = () => {
+const Form = ({ date }) => {
   const [exchangeAmount, setExchangeAmount] = useState(0);
   const [exchangeCurrency, setExchangeCurrency] = useState("PLN");
   const [resultCurrency, setResultCurrency] = useState("EUR");
@@ -13,7 +13,7 @@ const Form = () => {
 
   const result = exchangeAmount * exchangeRate;
 
-  const onInputChange = ({ target }) => { 
+  const onInputChange = ({ target }) => {
     if (Math.sign(target.value) < 0) {
       setExchangeAmount(target.value.slice(1));
     } else {
@@ -26,11 +26,10 @@ const Form = () => {
   return (
     <form className="form">
       <fieldset className="form__fieldset">
-        <legend className="form__legend">
-          Kalkulator walut <span className="form__legendSmall">(kursy z dnia 13.06.2022)</span>
-        </legend>
+        <legend className="form__legend">Kalkulator walut</legend>
+        {date}
         <p>
-          <label className="form__label form--alignRight" for="exchange">
+          <label className="form__label form--alignRight" htmlFor="exchange">
             Kwota do wymiany:
           </label>
           <input
@@ -42,11 +41,7 @@ const Form = () => {
             step="1"
             id="exchange"
           />
-          <select 
-            value={exchangeCurrency} 
-            onChange={onExchangeCurrencyChange} 
-            className="form__select"
-          >
+          <select value={exchangeCurrency} onChange={onExchangeCurrencyChange} className="form__select">
             {currencies.map(({ shortName, name }) => (
               <option value={shortName} key={shortName}>
                 {shortName} ({name})
@@ -55,7 +50,7 @@ const Form = () => {
           </select>
         </p>
         <p>
-          <label className="form__label form--alignRight" for="receive">
+          <label className="form__label form--alignRight" htmlFor="receive">
             Otrzymasz:
           </label>
           <input
@@ -65,11 +60,7 @@ const Form = () => {
             id="receive"
             readOnly
           />
-          <select 
-            value={resultCurrency} 
-            onChange={onResultCurrencyChange}
-            className="form__select"
-          >
+          <select value={resultCurrency} onChange={onResultCurrencyChange} className="form__select">
             {currencies.map(({ shortName, name }) => (
               <option value={shortName} key={shortName}>
                 {shortName} ({name})

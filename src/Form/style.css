@@ -13,6 +13,7 @@
     width: 110px;
     border-radius: 4px;
     padding: 5px;
+    line-height: normal;
   }
   
   .form__fieldset {
@@ -29,10 +30,6 @@
     padding: 5px;
     background-color: #f5e1cb;
     border-radius: 4px;
-  }
-  
-  .form__legendSmall {
-    font-size: small;
   }
   
   .form__select {

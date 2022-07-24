@@ -1,9 +1,10 @@
 import Form from "./Form";
+import DateTime from "./DateTime";
 
 function App() {
   return (
     <div className="container">
-      <Form />
+      <Form date={<DateTime />} />
     </div>
   );
 }
