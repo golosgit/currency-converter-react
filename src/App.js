@@ -3,6 +3,7 @@ import Container from "./Container";
 import Legend from "./Legend";
 import Form from "./Form";
 import DateTime from "./DateTime";
+import Result from "./Result";
 import currencies from "./currencies";
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
   return (
     <Container>
       <Form>
-        <Legend legend={"Kalkulator walut"}/>
+        <Legend legend={"Kalkulator walut"} />
         <DateTime />
         <p>
           <label className="form__label form--alignRight" htmlFor="exchange">
@@ -71,9 +72,11 @@ function App() {
             ))}
           </select>
         </p>
-        <p className="form__exchangeInfo">
-          1 {exchangeCurrency} to {exchangeRate.toFixed(5)} {resultCurrency}
-        </p>
+        <Result 
+          exchangeCurrency={exchangeCurrency} 
+          exchangeRate={exchangeRate} 
+          resultCurrency={resultCurrency} 
+        />
       </Form>
     </Container>
   );

@@ -46,10 +46,3 @@ body {
   border-radius: 4px;
   padding: 5px;
 }
-
-.form__exchangeInfo {
-  font-size: 0.7em;
-  font-weight: 700;
-  text-align: center;
-  margin: 0 auto;
-}
