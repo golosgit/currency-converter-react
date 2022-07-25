@@ -1,7 +1,8 @@
 import { useState } from "react";
+import Container from "./Container";
+import Legend from "./Legend";
 import Form from "./Form";
 import DateTime from "./DateTime";
-import Container from "./Container";
 import currencies from "./currencies";
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
   return (
     <Container>
       <Form>
-        <legend className="form__legend">Kalkulator walut</legend>
+        <Legend legend={"Kalkulator walut"}/>
         <DateTime />
         <p>
           <label className="form__label form--alignRight" htmlFor="exchange">

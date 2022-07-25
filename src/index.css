@@ -40,12 +40,6 @@ body {
   background-color: rgb(231, 225, 225);
 }
 
-.form__legend {
-  padding: 5px;
-  background-color: #f5e1cb;
-  border-radius: 4px;
-}
-
 .form__select {
   margin: 0 5px;
   border: 1px solid #bbb;
