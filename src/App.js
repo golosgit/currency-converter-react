@@ -55,9 +55,6 @@ function App() {
           </select>
         </p>
         <p>
-          <label className="form__label form--alignRight" htmlFor="receive">
-            Otrzymasz:
-          </label>
           <Result result={result} />
           <select value={resultCurrency} onChange={onResultCurrencyChange} className="form__select">
             {currencies.map(({ shortName, name }) => (
