@@ -1,6 +1,6 @@
 import "./style.css";
 
-const Result = ({ result }) => {
+const Result = ({ exchangeAmount, exchangeRate, checkCurrenciesType }) => {
   return (
     <>
       <label className="form__label form--alignRight" htmlFor="receive">
@@ -9,7 +9,11 @@ const Result = ({ result }) => {
       <input
         className="form__input form--alignRight form__input--readonly"
         type="number"
-        value={result.toFixed(2)}
+        value={
+          checkCurrenciesType() ? 
+          (exchangeAmount*exchangeRate).toFixed(0) : 
+          (exchangeAmount*exchangeRate).toFixed(2)
+        }
         id="receive"
         readOnly
       />

@@ -16,8 +16,6 @@ function App() {
     currencies.find(({ shortName }) => shortName === exchangeCurrency).rate /
     currencies.find(({ shortName }) => shortName === resultCurrency).rate;
 
-  const result = exchangeAmount * exchangeRate;
-
   const onInputChange = ({ target }) => {
     if (Math.sign(target.value) < 0) {
       setExchangeAmount(target.value.slice(1));
@@ -27,6 +25,8 @@ function App() {
   };
   const onExchangeCurrencyChange = ({ target }) => setExchangeCurrency(target.value);
   const onResultCurrencyChange = ({ target }) => setResultCurrency(target.value);
+
+  const checkCurrenciesType = () => exchangeCurrency === resultCurrency ? true : false;
 
   return (
     <Container>
@@ -55,7 +55,11 @@ function App() {
           </select>
         </p>
         <p>
-          <Result result={result} />
+          <Result 
+            exchangeRate={exchangeRate} 
+            exchangeAmount={exchangeAmount}
+            checkCurrenciesType={checkCurrenciesType}
+          />
           <select value={resultCurrency} onChange={onResultCurrencyChange} className="form__select">
             {currencies.map(({ shortName, name }) => (
               <option value={shortName} key={shortName}>
@@ -68,6 +72,7 @@ function App() {
           exchangeCurrency={exchangeCurrency} 
           exchangeRate={exchangeRate} 
           resultCurrency={resultCurrency} 
+          checkCurrenciesType={checkCurrenciesType}
         />
       </Form>
     </Container>
