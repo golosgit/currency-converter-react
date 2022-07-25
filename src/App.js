@@ -5,7 +5,7 @@ import Container from "./Container";
 function App() {
   return (
     <Container>
-      <Form date={<DateTime />} />;
+      <Form date={<DateTime />} />
     </Container>
   )
 }
