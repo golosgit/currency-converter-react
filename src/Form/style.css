@@ -1,47 +1,5 @@
-.form__label {
-  width: 160px;
-  display: inline-block;
-  padding: 0 5px;
-}
-
-.form--alignRight {
-  text-align: right;
-}
-
-.form__input {
-  border: 1px solid #bbb;
-  width: 110px;
-  border-radius: 4px;
-  padding: 5px;
-  line-height: normal;
-}
-
 .form__fieldset {
   border: 1px solid #bbb;
   border-radius: 4px;
   margin: 20px;
-}
-
-.form__input--readonly {
-  background-color: rgb(231, 225, 225);
-}
-
-.form__legend {
-  padding: 5px;
-  background-color: #f5e1cb;
-  border-radius: 4px;
-}
-
-.form__select {
-  margin: 0 5px;
-  border: 1px solid #bbb;
-  border-radius: 4px;
-  padding: 5px;
-}
-
-.form__exchangeInfo {
-  font-size: 0.7em;
-  font-weight: 700;
-  text-align: center;
-  margin: 0 auto;
 }
