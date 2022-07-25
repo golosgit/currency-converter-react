@@ -4,6 +4,7 @@ import Legend from "./Legend";
 import Form from "./Form";
 import DateTime from "./DateTime";
 import ResultInfo from "./ResultInfo";
+import Result from "./Result";
 import currencies from "./currencies";
 
 function App() {
@@ -57,13 +58,7 @@ function App() {
           <label className="form__label form--alignRight" htmlFor="receive">
             Otrzymasz:
           </label>
-          <input
-            className="form__input form--alignRight form__input--readonly"
-            type="number"
-            value={result.toFixed(2)}
-            id="receive"
-            readOnly
-          />
+          <Result result={result} />
           <select value={resultCurrency} onChange={onResultCurrencyChange} className="form__select">
             {currencies.map(({ shortName, name }) => (
               <option value={shortName} key={shortName}>
