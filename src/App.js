@@ -1,12 +1,13 @@
 import Form from "./Form";
 import DateTime from "./DateTime";
+import Container from "./Container";
 
 function App() {
   return (
-    <div className="container">
-      <Form date={<DateTime />} />
-    </div>
-  );
+    <Container>
+      <Form date={<DateTime />} />;
+    </Container>
+  )
 }
 
 export default App;

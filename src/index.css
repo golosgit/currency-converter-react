@@ -17,14 +17,3 @@ body {
   align-items: center;
   justify-items: stretch;
 }
-
-.container {
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-@media (max-width: 767px) {
-  .container {
-    min-width: 580px;
-  }
-}
