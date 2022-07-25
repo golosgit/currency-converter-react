@@ -36,9 +36,7 @@ body {
   line-height: normal;
 }
 
-.form__input--readonly {
-  background-color: rgb(231, 225, 225);
-}
+
 
 .form__select {
   margin: 0 5px;
