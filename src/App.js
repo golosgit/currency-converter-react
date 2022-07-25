@@ -3,7 +3,7 @@ import Container from "./Container";
 import Legend from "./Legend";
 import Form from "./Form";
 import DateTime from "./DateTime";
-import Result from "./Result";
+import ResultInfo from "./ResultInfo";
 import currencies from "./currencies";
 
 function App() {
@@ -72,7 +72,7 @@ function App() {
             ))}
           </select>
         </p>
-        <Result 
+        <ResultInfo 
           exchangeCurrency={exchangeCurrency} 
           exchangeRate={exchangeRate} 
           resultCurrency={resultCurrency} 

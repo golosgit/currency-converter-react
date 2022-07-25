@@ -1,6 +1,6 @@
 import "./style.css";
 
-const Result = ({ exchangeCurrency, exchangeRate, resultCurrency }) => {
+const ResultInfo = ({ exchangeCurrency, exchangeRate, resultCurrency }) => {
   return (
     <p className="form__exchangeInfo">
       1 {exchangeCurrency} to {exchangeRate.toFixed(5)} {resultCurrency}
@@ -8,4 +8,4 @@ const Result = ({ exchangeCurrency, exchangeRate, resultCurrency }) => {
   );
 };
 
-export default Result;
+export default ResultInfo;
