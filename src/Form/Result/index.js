@@ -1,4 +1,4 @@
-import { Label, Input } from "../Form/styled.js";
+import { Label, Input } from "../styled.js";
 
 export const Result = ({ exchangeAmount, exchangeRate, checkCurrenciesType }) => {
   return (
