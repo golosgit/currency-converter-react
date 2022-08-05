@@ -1,7 +1,5 @@
-import "./style.css";
+import { StyledLegend } from "./styled.js";
 
-const Legend = ({ legend }) => {
-  return <legend className="form__legend">{legend}</legend>;
+export const Legend = ({ legend }) => {
+  return <StyledLegend>{legend}</StyledLegend>;
 };
-
-export default Legend;

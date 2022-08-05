@@ -1,12 +1,12 @@
 import { useState } from "react";
-import DateTime from "../DateTime";
-import ResultInfo from "../ResultInfo";
-import Result from "../Result";
-import Legend from "../Legend";
-import currencies from "./currencies";
-import "./style.css";
+import { DateTime } from "../DateTime";
+import { ResultInfo } from "../ResultInfo";
+import { Result } from "../Result";
+import { Legend } from "../Legend";
+import { currencies } from "./currencies";
+import { Fieldset, Label, Input, Select } from "./styled.js";
 
-const Form = () => {
+export const Form = () => {
   const [exchangeAmount, setExchangeAmount] = useState(0);
   const [exchangeCurrency, setExchangeCurrency] = useState("PLN");
   const [resultCurrency, setResultCurrency] = useState("EUR");
@@ -29,29 +29,28 @@ const Form = () => {
 
   return (
     <form>
-      <fieldset className="form__fieldset">
+      <Fieldset>
         <Legend legend={"Kalkulator walut"} />
         <DateTime />
         <p>
-          <label className="form__label form--alignRight" htmlFor="exchange">
+          <Label htmlFor="exchange">
             Kwota do wymiany:
-          </label>
-          <input
+          </Label>
+          <Input
             value={exchangeAmount}
             onChange={onInputChange}
-            className="form__input form--alignRight"
             type="number"
             min="0"
             step="1"
             id="exchange"
           />
-          <select value={exchangeCurrency} onChange={onExchangeCurrencyChange} className="form__select">
+          <Select value={exchangeCurrency} onChange={onExchangeCurrencyChange}>
             {currencies.map(({ shortName, name }) => (
               <option value={shortName} key={shortName}>
                 {shortName} ({name})
               </option>
             ))}
-          </select>
+          </Select>
         </p>
         <p>
           <Result 
@@ -59,13 +58,13 @@ const Form = () => {
             exchangeAmount={exchangeAmount} 
             checkCurrenciesType={checkCurrenciesType} 
           />
-          <select value={resultCurrency} onChange={onResultCurrencyChange} className="form__select">
+          <Select value={resultCurrency} onChange={onResultCurrencyChange}>
             {currencies.map(({ shortName, name }) => (
               <option value={shortName} key={shortName}>
                 {shortName} ({name})
               </option>
             ))}
-          </select>
+          </Select>
         </p>
         <ResultInfo
           exchangeCurrency={exchangeCurrency}
@@ -73,9 +72,7 @@ const Form = () => {
           resultCurrency={resultCurrency}
           checkCurrenciesType={checkCurrenciesType}
         />
-      </fieldset>
+      </Fieldset>
     </form>
   );
 };
-
-export default Form;

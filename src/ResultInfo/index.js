@@ -1,13 +1,11 @@
-import "./style.css";
+import { Info } from "./styled.js";
 
-const ResultInfo = ({ exchangeCurrency, exchangeRate, resultCurrency, checkCurrenciesType }) => {
+export const ResultInfo = ({ exchangeCurrency, exchangeRate, resultCurrency, checkCurrenciesType }) => {
   return (
-    <p className="form__exchangeInfo">
+    <Info>
       1 {exchangeCurrency} to&nbsp;
       {checkCurrenciesType() ? exchangeRate.toFixed(0) : exchangeRate.toFixed(5)}&nbsp;
       {resultCurrency}
-    </p>
+    </Info>
   );
 };
-
-export default ResultInfo;

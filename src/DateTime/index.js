@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./style.css";
+import { ActualDate } from "./styled.js";
 
 const formatDate = (date) =>
   date.toLocaleDateString("pl-PL", {
@@ -12,7 +12,7 @@ const formatDate = (date) =>
     second: "numeric",
   });
 
-const DateTime = () => {
+export const DateTime = () => {
   const [date, setDate] = useState(new Date());
 
   useEffect(() => {
@@ -25,7 +25,5 @@ const DateTime = () => {
     };
   }, []);
 
-  return <p className="dateAndTime">{formatDate(date)}</p>;
+  return <ActualDate>{formatDate(date)}</ActualDate>;
 };
-
-export default DateTime;

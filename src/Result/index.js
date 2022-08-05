@@ -1,13 +1,13 @@
-import "./style.css";
+import { Label, Input } from "../Form/styled.js";
 
-const Result = ({ exchangeAmount, exchangeRate, checkCurrenciesType }) => {
+export const Result = ({ exchangeAmount, exchangeRate, checkCurrenciesType }) => {
   return (
     <>
-      <label className="form__label form--alignRight" htmlFor="receive">
+      <Label htmlFor="receive">
         Otrzymasz:
-      </label>
-      <input
-        className="form__input form--alignRight form__input--readonly"
+      </Label>
+      <Input
+        result
         type="number"
         value={
           checkCurrenciesType() ? 
@@ -20,5 +20,3 @@ const Result = ({ exchangeAmount, exchangeRate, checkCurrenciesType }) => {
     </>
   );
 };
-
-export default Result;

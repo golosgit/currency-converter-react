@@ -1,4 +1,4 @@
-const currencies = [
+export const currencies = [
   {
     name: "polski złoty",
     shortName: "PLN",
@@ -20,5 +20,3 @@ const currencies = [
     rate: 0.1874,
   },
 ];
-
-export default currencies;
