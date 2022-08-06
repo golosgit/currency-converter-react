@@ -1,29 +1,19 @@
-import { useEffect, useState } from "react";
+import { useCurrentDate } from "./useCurrentDate.js";
 import { ActualDate } from "./styled.js";
 
 const formatDate = (date) =>
   date.toLocaleDateString("pl-PL", {
     weekday: "long",
     year: "numeric",
-    month: "numeric",
-    day: "numeric",
-    hour: "numeric",
+    month: "2-digit",
+    day: "2-digit",
     minute: "numeric",
+    hour: "numeric",
     second: "numeric",
   });
 
 export const DateTime = () => {
-  const [date, setDate] = useState(new Date());
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setDate(new Date());
-    }, 1000);
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, []);
+  const date = useCurrentDate();
 
   return <ActualDate>{formatDate(date)}</ActualDate>;
 };
