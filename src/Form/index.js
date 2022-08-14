@@ -2,9 +2,8 @@ import { useState } from "react";
 import { DateTime } from "./DateTime";
 import { ResultInfo } from "./ResultInfo";
 import { Result } from "./Result";
-import { Legend } from "./Legend";
 import { currencies } from "./currencies";
-import { Fieldset, Label, Input, Select } from "./styled.js";
+import { Fieldset, Label, Input, Select, Legend } from "./styled.js";
 
 export const Form = () => {
   const [exchangeAmount, setExchangeAmount] = useState(0);
@@ -30,7 +29,9 @@ export const Form = () => {
   return (
     <form>
       <Fieldset>
-        <Legend legend={"Kalkulator walut"} />
+        <Legend>
+          "Kalkulator walut"
+        </Legend>
         <DateTime />
         <p>
           <Label htmlFor="exchange">

@@ -34,3 +34,9 @@ export const Select = styled.select`
   border-radius: 4px;
   padding: 5px;
 `;
+
+export const Legend = styled.legend`
+  padding: 5px 10px;
+  background-color: #f5e1cb;
+  border-radius: 4px;
+`;
