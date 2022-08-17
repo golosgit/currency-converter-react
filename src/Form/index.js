@@ -9,7 +9,7 @@ export const Form = () => {
   const [exchangeAmount, setExchangeAmount] = useState(0);
   const [exchangeCurrency, setExchangeCurrency] = useState("PLN");
   const [resultCurrency, setResultCurrency] = useState("EUR");
-  const { date, rates } = useExternalCurrencies("http://localhost:3000/currency-converter-react/currencies.json");
+  const { date, rates } = useExternalCurrencies();
 
   const exchangeRate = rates[exchangeCurrency] / rates[resultCurrency];
 

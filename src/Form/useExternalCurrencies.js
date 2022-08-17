@@ -5,9 +5,9 @@ export const useExternalCurrencies = () => {
   const [rates, setRates] = useState([]);
 
   useEffect(() => {
-    const fetchCurrencies = async (URL) => {
+    const fetchCurrencies = async () => {
       try {
-        const response = await fetch(URL);
+        const response = await fetch("http://localhost:3000/currency-converter-react/currencies.json");
 
         if (!response.ok) {
           throw new Error(`HTTP error: ${response.status}`);
