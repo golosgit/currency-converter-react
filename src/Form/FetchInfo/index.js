@@ -5,8 +5,8 @@ export const FetchInfo = ({ date }) => {
     <Wrapper>
       <FetchText>
         Kursy walut pobrane z&nbsp;
-        <StyledText as="a" href="https://exchangeratesapi.io/" target="_blank" rel="noopener noreferrer">
-          Exchange Rates API
+        <StyledText as="a" href="https://exchangerate.host/" target="_blank" rel="noopener noreferrer">
+        exchangerate.host
         </StyledText>
       </FetchText>
       <FetchText>
