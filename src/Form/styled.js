@@ -15,14 +15,14 @@ export const Label = styled.label`
 
 export const Input = styled.input`
   border: 1px solid #bbb;
-  width: 110px;
+  width: 160px;
   border-radius: 4px;
   padding: 5px;
   line-height: normal;
   text-align: right;
 
-  ${({ result }) =>
-    result &&
+  ${({ resultInput }) =>
+    resultInput &&
     css`
       background-color: rgb(231, 225, 225);
     `}
@@ -37,6 +37,6 @@ export const Select = styled.select`
 
 export const Legend = styled.legend`
   padding: 5px 10px;
-  background-color: #f5e1cb;
+  background-color: #f5e1cb7a;
   border-radius: 4px;
 `;

@@ -7,7 +7,7 @@ export const Result = ({ exchangeAmount, exchangeRate, checkCurrenciesType }) =>
         Otrzymasz:
       </Label>
       <Input
-        result
+        resultInput
         type="number"
         value={
           checkCurrenciesType() ? 

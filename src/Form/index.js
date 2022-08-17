@@ -2,6 +2,7 @@ import { useState } from "react";
 import { DateTime } from "./DateTime";
 import { ResultInfo } from "./ResultInfo";
 import { Result } from "./Result";
+import { FetchInfo } from "./FetchInfo";
 import { Fieldset, Label, Input, Select, Legend } from "./styled.js";
 import { useExternalCurrencies } from "./useExternalCurrencies";
 
@@ -57,7 +58,7 @@ export const Form = () => {
           resultCurrency={resultCurrency}
           checkCurrenciesType={checkCurrenciesType}
         />
-        <p>Dane pobrane {date}</p>
+        <FetchInfo date={date} />
       </Fieldset>
     </form>
   );
