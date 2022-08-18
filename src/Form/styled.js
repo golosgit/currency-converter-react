@@ -21,9 +21,7 @@ export const Input = styled.input`
   line-height: normal;
   text-align: right;
 
-  ${({ resultInput }) =>
-    resultInput &&
-    css`
+  ${({ resultInput }) => resultInput && css`
       background-color: rgb(231, 225, 225);
     `}
 `;
@@ -39,4 +37,14 @@ export const Legend = styled.legend`
   padding: 5px 10px;
   background-color: #f5e1cb7a;
   border-radius: 4px;
+`;
+
+export const LoadingText = styled.p`
+  margin: 30px 0 10px;
+  text-align: center;
+  font-size: 20px;
+
+  ${({ nextLine }) => nextLine && css`
+    margin: 10px;
+  `}
 `;
