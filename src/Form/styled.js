@@ -21,7 +21,9 @@ export const Input = styled.input`
   line-height: normal;
   text-align: right;
 
-  ${({ resultInput }) => resultInput && css`
+  ${({ resultInput }) =>
+    resultInput &&
+    css`
       background-color: rgb(231, 225, 225);
     `}
 `;
@@ -44,7 +46,15 @@ export const LoadingText = styled.p`
   text-align: center;
   font-size: 20px;
 
-  ${({ nextLine }) => nextLine && css`
-    margin: 10px;
-  `}
+  ${({ nextLine }) =>
+    nextLine &&
+    css`
+      margin: 10px;
+    `}
+`;
+
+export const Flex = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

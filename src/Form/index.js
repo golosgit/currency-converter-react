@@ -3,7 +3,7 @@ import { DateTime } from "./DateTime";
 import { ResultInfo } from "./ResultInfo";
 import { Result } from "./Result";
 import { FetchInfo } from "./FetchInfo";
-import { Fieldset, Label, Input, Select, Legend, LoadingText } from "./styled.js";
+import { Fieldset, Label, Input, Select, Legend, LoadingText, Flex } from "./styled.js";
 import { useExternalCurrencies } from "./useExternalCurrencies";
 
 export const Form = () => {
@@ -55,25 +55,29 @@ export const Form = () => {
         <Legend>Kalkulator walut</Legend>
         <DateTime />
         <p>
-          <Label htmlFor="exchange">Kwota do wymiany:</Label>
-          <Input value={exchangeAmount} onChange={onInputChange} type="number" min="0" step="1" id="exchange" />
-          <Select value={exchangeCurrency} onChange={onExchangeCurrencyChange}>
-            {Object.keys(rates).map((currency) => (
-              <option value={currency} key={currency}>
-                {currency}
-              </option>
-            ))}
-          </Select>
+          <Flex>
+            <Label htmlFor="exchange">Kwota do wymiany:</Label>
+            <Input value={exchangeAmount} onChange={onInputChange} type="number" min="0" step="1" id="exchange" />
+            <Select value={exchangeCurrency} onChange={onExchangeCurrencyChange}>
+              {Object.keys(rates).map((currency) => (
+                <option value={currency} key={currency}>
+                  {currency}
+                </option>
+              ))}
+            </Select>
+          </Flex>
         </p>
         <p>
-          <Result exchangeRate={exchangeRate} exchangeAmount={exchangeAmount} checkCurrenciesType={checkCurrenciesType} />
-          <Select value={resultCurrency} onChange={onResultCurrencyChange}>
-            {Object.keys(rates).map((currency) => (
-              <option value={currency} key={currency}>
-                {currency}
-              </option>
-            ))}
-          </Select>
+          <Flex>
+            <Result exchangeRate={exchangeRate} exchangeAmount={exchangeAmount} checkCurrenciesType={checkCurrenciesType} />
+            <Select value={resultCurrency} onChange={onResultCurrencyChange}>
+              {Object.keys(rates).map((currency) => (
+                <option value={currency} key={currency}>
+                  {currency}
+                </option>
+              ))}
+            </Select>
+          </Flex>
         </p>
         <ResultInfo
           exchangeCurrency={exchangeCurrency}

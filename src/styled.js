@@ -5,6 +5,6 @@ export const Container = styled.div`
   margin: 0 auto;
 
   @media (max-width: 767px) {
-    min-width: 580px;
+    min-width: 500px;
   }
 `;
