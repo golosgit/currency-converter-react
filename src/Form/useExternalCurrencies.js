@@ -8,7 +8,7 @@ export const useExternalCurrencies = () => {
   useEffect(() => {
     const fetchCurrencies = async () => {
       try {
-        const response = await fetch("http://localhost:3000/currency-converter-react/currencies.json");
+        const response = await fetch("https://api.exchangerate.host/latest?base=PLN");
 
         if (!response.ok) {
           setStatus("error");
