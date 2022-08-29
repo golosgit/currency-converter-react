@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import loading from "./loading.gif";
 
 export const Fieldset = styled.fieldset`
   border: 1px solid #bbb;
@@ -42,7 +43,7 @@ export const Legend = styled.legend`
 `;
 
 export const LoadingText = styled.p`
-  margin: 30px 0 10px;
+  margin: 10px 0;
   text-align: center;
   font-size: 20px;
 
@@ -57,4 +58,13 @@ export const Flex = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+export const LoadingGif = styled.img.attrs({
+  src: loading,
+  alt: "Loading gif"
+})`
+  display: block;
+  width: 100px;
+  margin: 20px auto 10px;
 `;
