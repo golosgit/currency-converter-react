@@ -3,14 +3,14 @@ import { DateTime } from "./DateTime";
 import { ResultInfo } from "./ResultInfo";
 import { Result } from "./Result";
 import { FetchInfo } from "./FetchInfo";
-import { Fieldset, Label, Input, Select, Legend, LoadingText, Flex } from "./styled.js";
+import { Fieldset, Label, Input, Select, Legend, LoadingText, Flex, LoadingGif } from "./styled";
 import { useExternalCurrencies } from "./useExternalCurrencies";
 
 export const Form = () => {
   const [exchangeAmount, setExchangeAmount] = useState(0);
   const [exchangeCurrency, setExchangeCurrency] = useState("PLN");
   const [resultCurrency, setResultCurrency] = useState("EUR");
-  const { date, rates, status } = useExternalCurrencies();
+  const { date, rates, status, requestStatus } = useExternalCurrencies();
 
   const exchangeRate = rates[exchangeCurrency] / rates[resultCurrency];
 
@@ -26,17 +26,18 @@ export const Form = () => {
 
   const checkCurrenciesType = () => (exchangeCurrency === resultCurrency ? true : false);
 
-  if (status === "fetching") {
+  if (status === requestStatus.PENDING) {
     return (
       <form>
         <Fieldset>
           <Legend>Kalkulator walut</Legend>
           <DateTime />
+          <LoadingGif />
           <LoadingText>Proszę chwilę poczekać. Trwa pobieranie danych z serwera...</LoadingText>
         </Fieldset>
       </form>
     )
-  } else if (status === "error") {
+  } else if (status === requestStatus.ERROR) {
     return (
       <form>
         <Fieldset>
