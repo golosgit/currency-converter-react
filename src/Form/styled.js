@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import loading from "./loading.gif";
 
 export const Fieldset = styled.fieldset`
-  border: 1px solid #bbb;
+  border: 1px solid ${({ theme }) => theme.color.silver};
   border-radius: 4px;
   margin: 20px;
 `;
@@ -15,7 +15,7 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  border: 1px solid #bbb;
+  border: 1px solid ${({ theme }) => theme.color.silver};
   width: 160px;
   border-radius: 4px;
   padding: 5px;
@@ -25,20 +25,20 @@ export const Input = styled.input`
   ${({ resultInput }) =>
     resultInput &&
     css`
-      background-color: rgb(231, 225, 225);
+      background-color: ${({ theme }) => theme.color.ebb};
     `}
 `;
 
 export const Select = styled.select`
   margin: 0 5px;
-  border: 1px solid #bbb;
+  border: 1px solid ${({ theme }) => theme.color.silver};
   border-radius: 4px;
   padding: 5px;
 `;
 
 export const Legend = styled.legend`
   padding: 5px 10px;
-  background-color: #f5e1cb7a;
+  background-color: ${({ theme }) => theme.color.albescentWhite};
   border-radius: 4px;
 `;
 

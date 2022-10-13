@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   text-align: center;
   font-size: 14px;
-  background-color: #f5e1cb7a;
+  background-color: ${({ theme }) => theme.color.albescentWhite};
   border-radius: 4px;
   width: 320px;
   margin: 15px auto 0;
