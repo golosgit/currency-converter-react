@@ -1,4 +1,4 @@
-import { Container } from "./styled.js";
+import { Container } from "../src/common/Container/styled"
 import { Form } from "./Form";
 
 function App() {
