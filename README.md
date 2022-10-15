@@ -10,7 +10,7 @@ https://golosgit.github.io/currency-converter-react/
 
 ## General info
 
-Simple currency converter. At the moment there are 4 currencies to choose from.
+Currency converter and exchange rate for around 170 currencies. Data is downloaded from external API [exchangerate.host](https://exchangerate.host/#/). Additionally there is simple clock with current date and time.
 
 ## Technologies
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -18,8 +18,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Project was created with:
 
 - HTML
-- CSS (BEM, grid, media queries)
+- CSS (media queries, grid, flex)
 - JavaScript (React)
+- Styled Components
 
 ## Available scripts
 
